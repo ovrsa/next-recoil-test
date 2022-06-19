@@ -1,7 +1,13 @@
-import '../styles/globals.css'
+import "../styles/globals.css";
+import { RecoilRoot } from "recoil"; //追加
 
-function MyApp({ Component, pageProps }) {
-  return <Component {...pageProps} />
-}
+// recoilでは値を共有したい範囲をRecoilRootで囲う
+const MyApp = ({ Component, pageProps }) => {
+  return (
+    <RecoilRoot>
+      <Component {...pageProps} />
+    </RecoilRoot>
+  );
+};
 
-export default MyApp
+export default MyApp;
